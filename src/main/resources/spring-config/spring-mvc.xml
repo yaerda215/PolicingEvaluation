@@ -37,9 +37,9 @@
     <mvc:resources location="/upload/" mapping="/upload/**"/> 
     
     <!-- annotation默认的方法映射适配器 -->    
-    <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
-    <bean id="handlerAdapter" class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
-    
+    <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <bean id="handlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" />
+
     <!-- 支持上传文件 -->  
     <bean id="multipartResolver" class="com.zjw.sy.web.upload.CustomMultipartResolver"/>
 </beans>
