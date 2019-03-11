@@ -13,35 +13,35 @@ import javax.persistence.Table;
 public class User {
 
     @Column(name = "userId")
-    private int userId;
+    private Integer userId;
 
     @Column(name = "userName")
-    private int userName;
+    private String userName;
 
     @Column(name = "pwd")
-    private int pwd;
+    private String pwd;
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public int getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(int userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
-    public int getPwd() {
+    public String getPwd() {
         return pwd;
     }
 
-    public void setPwd(int pwd) {
+    public void setPwd(String pwd) {
         this.pwd = pwd;
     }
 }

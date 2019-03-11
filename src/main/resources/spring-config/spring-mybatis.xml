@@ -82,7 +82,7 @@
     <!-- 任务执行定时器，启动注解任务
 	<task:annotation-driven /> 
     -->
-      
+
     <!-- 创建一个sqlSession实例，线程安全的，可以在所有DAO实例共享，原理是将sqlSession，事务与当前线程挂钩 -->
 	<bean name="sqlSessionTemplateASS" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
 		<constructor-arg index="0" ref="sqlSessionFactory" />

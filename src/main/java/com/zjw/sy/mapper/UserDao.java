@@ -1,4 +1,4 @@
-package com.zjw.sy.dao;
+package com.zjw.sy.mapper;
 
 import com.zjw.sy.entity.User;
 import org.springframework.stereotype.Repository;

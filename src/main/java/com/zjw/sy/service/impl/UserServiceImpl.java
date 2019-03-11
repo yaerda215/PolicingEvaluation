@@ -1,9 +1,8 @@
 package com.zjw.sy.service.impl;
 
-import com.zjw.sy.dao.UserDao;
+import com.zjw.sy.mapper.UserDao;
 import com.zjw.sy.entity.User;
 import com.zjw.sy.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

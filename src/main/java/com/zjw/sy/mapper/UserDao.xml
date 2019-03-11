@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zjw.sy.dao.UserDao">
+<mapper namespace="com.zjw.sy.mapper.UserDao">
     <!-- 目的：为dao接口方法提供sql语句配置 -->
     <select id="login" resultType="com.zjw.sy.entity.User" parameterType="com.zjw.sy.entity.User">
         SELECT
@@ -10,7 +10,7 @@
         FROM
         user
         WHERE
-        userId = #{userId}
+        userName = #{userName}
         and pwd = #{pwd}
     </select>
 
