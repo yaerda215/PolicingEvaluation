@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.zjw.sy.entity.TaskManage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -35,33 +36,7 @@ public class CompanyController {
 	
 	@Resource
 	private ICompanyService companyService;
-	
-	/**
-	 * 根据ID获取用户
-	 * @param id
-	 * @param model
-	 * @param request
-	 * @param response
-	 * @return
-	 */
-	@RequestMapping(value = "/com/get/{id}", method = RequestMethod.GET)
-	public String get(@PathVariable("id") Integer id, Model model,
-			HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("###ID:" + id);
-		// model.addAttribute(userService.getUserById(id));
-		return "/test/show.jsp";
-	}
 
-	/**
-	 * 进入用户列表页面
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping("/com/list")
-	public String list(HttpServletRequest request, Model model) {
-		return "company";
-	}
-	
 	/**
 	 * 查询用户记录
 	 * @param request
@@ -71,24 +46,12 @@ public class CompanyController {
 	@RequestMapping(value="/com/getData", produces = "text/json;charset=UTF-8")
 	@ResponseBody
 	public String getData(HttpServletRequest request, QueryCondition query) {
-		DatatablesView<Company> dataTable = companyService.getCompanyByCondition(query);
-		dataTable.setDraw(query.getDraw());
+		DatatablesView<TaskManage> dataTable = companyService.getCompanyByCondition(query);
+		//dataTable.setDraw(query.getDraw());
 		String data = JSON.toJSONString(dataTable);
 		return data;
 	}
-	
-	/**
-	 * 获取制定用户列表列表
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping(value="/com/getDataByType/{type}", produces = "text/json;charset=UTF-8", method = RequestMethod.GET)
-	@ResponseBody
-	public String list(@PathVariable("type") Integer type, Model model){
-		List<Company> list = companyService.getCompanyByType(type);
-		return JSON.toJSONString(list);
-	}
-	
+
 	@ExceptionHandler(Exception.class)
 	public String exception(Exception e, HttpServletRequest request) {
 		request.setAttribute("exception", e);

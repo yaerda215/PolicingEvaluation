@@ -1,13 +1,3 @@
-<%@ page language="java" pageEncoding="UTF-8" import="java.util.*,com.zjw.sy.entity.*"%>
-<%
-	Company user = (Company)session.getAttribute("currentUser"); //登录用户
-	if(user == null){
-%>
-	<jsp:forward page="/WEB-INF/pages/timeout.jsp"/>
-<%
-	}
-%>
-
 <header class="main-header">
 	<!-- Logo -->
 	<a href="<%=path%>" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -25,9 +15,9 @@
 		<div class="navbar-custom-menu">
 			<ul class="nav navbar-nav">
 				<li class="dropdown user user-menu">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+					<a href="#"<%-- class="dropdown-toggle" data-toggle="dropdown"--%>>
 						<!-- <img src="<%=path%>/res/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">  -->
-						<span class="hidden-xs">${currentUser.companyName}</span>, <sp:message code="sys.wel"/>
+						<%--<span class="hidden-xs">${currentUser.companyName}</span>, --%><sp:message code="sys.wel"/>
 					</a>
 					<ul class="dropdown-menu">
 						<!-- Menu Footer-->

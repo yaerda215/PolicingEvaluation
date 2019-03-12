@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.sy.mapper.CompMapper">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="taskList" resultType="com.zjw.sy.entity.TaskManage" parameterType="com.zjw.sy.entity.bean.QueryCondition">
+        SELECT
+        *
+        FROM
+        task_manage
+        <where>
+            <if test="taskDegree != null and taskDegree != ''">
+                taskDegree = #{taskDegree}
+            </if>
+            <if test="taskTitle != null and taskTitle != ''">
+                taskTitle = #{taskTitle}
+            </if>
+        </where>
+        order by endTime desc
+    </select>
+
+</mapper>

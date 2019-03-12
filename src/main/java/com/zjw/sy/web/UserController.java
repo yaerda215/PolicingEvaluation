@@ -51,7 +51,7 @@ public class UserController {
 		user = userService.login(user);
 		if(user != null){
 			//request.getSession().setAttribute(Constants.CURRENT_USER, user);
-			return new ModelAndView("redirect:/com/list");
+			return new ModelAndView("company");
 		}else{
 			model.addAttribute("msg", "登陆失败，请重新登陆!");
 			return new ModelAndView("login");
@@ -68,31 +68,7 @@ public class UserController {
 		request.getSession().setAttribute("company", null);
 		return "login";
 	}
-	
-	/**
-	 * 用户激活
-	 * @param request
-	 * @return
-	 */
-	@RequestMapping("/account/activate/service")
-	public String active(HttpServletRequest request, Model model){   
-		
-		String id = request.getParameter("id");
-		String checkCode = request.getParameter("checkCode");
-		Company company = companyService.getCompanyById(Long.parseLong(id));
-		int result = companyService.activeUser(company, checkCode);
-		if(result == 1){
-			request.getSession().setAttribute("company", company);
-			
-			model.addAttribute("result", result);
-			model.addAttribute("msg", "激活成功!");
-			
-			return "redirect:/com/list";
-//			return "redirect:/com/list";
-		}else{
-			return Constants.PAGE_404;
-		}
-	}
+
 	
 	/**
 	 * 用户找回密码
@@ -104,24 +80,7 @@ public class UserController {
 		request.getSession().setAttribute("company", null);
 		return "login";
 	}
-	
-	/**
-	 * 用户注册用户名验证
-	 * @param username
-	 * @return
-	 */
-	@RequestMapping(value = "/account/reusername", produces = "text/json;charset=UTF-8")
-	@ResponseBody
-	public String reUsername(String username) {
-		Company company = companyService.getCompanyByName(username);
-		String result;
-		if (company != null) {
-			result = "{\"valid\":false}";
-		}else{
-			result = "{\"valid\":true}";
-		}
-		return result;
-	}
+
 	
 	/**
 	 * 用户注册
@@ -131,61 +90,7 @@ public class UserController {
 	public String register(){ 
 		return "register";
 	}
-	
-	/**
-	 * 用户注册
-	 * @param company
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping("/com/add")
-	public String add(Company company, ModelMap model) {
-		String password = company.getPassword();
-		int result = companyService.addCompany(company);
-		if (result == 1) {
-			company.setPassword(password);
-			company = companyService.getCompanyByNamePassword(company);
-			
-			//开启激活邮件发送
-			new SendMailThread(company).run();
-			
-			model.addAttribute("result", result);
-			model.addAttribute("msg", company.getUsername() + " 注册成功!");
-			log.info(Constants.SYS_NAME + "用户：" + company.getUsername() + " 注册成功!");
-		}
-		return "register";
-	}
-	
-	/**
-	 * 用户修改
-	 * @param company
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping(value = "/com/update", produces = "text/json;charset=UTF-8")
-	@ResponseBody
-	public String update(Company company, ModelMap model) {
-		int status = companyService.editCompany(company);
-		if (status == 1) {
-			log.info(Constants.SYS_NAME + "用户：" + company.getUsername() + " 注册成功!");
-		}
-		MessageView msg = new MessageView(status);
-		return JSON.toJSONString(msg);
-	}
-	
-	/**
-	 * 用户删除
-	 * @param id
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping(value = "/com/del/{id}", method = RequestMethod.DELETE, produces = "text/json;charset=UTF-8")
-	@ResponseBody
-	public String delete(@PathVariable("id") long id, Model model) {
-		int status = companyService.removeCompany(id);
-		MessageView msg = new MessageView(status);
-		return JSON.toJSONString(msg);
-	}
+
 	
 	/**
 	 * 发送激活邮件线程

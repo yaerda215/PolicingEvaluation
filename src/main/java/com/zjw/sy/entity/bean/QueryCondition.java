@@ -20,182 +20,113 @@ public class QueryCondition {
     
     private Integer type;
     
-    private String  startTime;
-    
-    private String  endTime;
+
     
     private String  keyword;
     
     private Integer status;
-    
-    //商品查询专用
-    private Long    goodsId;
-    
-    private Long    originId;
-    
-    private Long    areaId;
-    
-    private Long    goodsTypeId;
-    
-    private Integer goodsStatus;
-    
-    //商品二维码专用
-    private String path;
-    
-    private String qrcodePath;
-    
-    private String qrcodeUrl;
-    
-    public QueryCondition() {  
-          
-    }
 
-	public Long getId() {
-		return id;
+
+	private long taskId;
+	private String taskTitle;
+	private String taskContent;
+	private long taskDegree;
+	private long userId;
+	private String userName;
+	private java.sql.Timestamp startTime;
+	private java.sql.Timestamp endTime;
+	private long sendUserId;
+	private String sendUserName;
+
+
+	public long getTaskId() {
+		return taskId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setTaskId(long taskId) {
+		this.taskId = taskId;
 	}
 
-	public Integer getDraw() {
-		return draw;
+
+	public String getTaskTitle() {
+		return taskTitle;
 	}
 
-	public void setDraw(Integer draw) {
-		this.draw = draw;
+	public void setTaskTitle(String taskTitle) {
+		this.taskTitle = taskTitle;
 	}
 
-	public Integer getStart() {
-		return start;
+
+	public String getTaskContent() {
+		return taskContent;
 	}
 
-	public void setStart(Integer start) {
-		this.start = start;
+	public void setTaskContent(String taskContent) {
+		this.taskContent = taskContent;
 	}
 
-	public Integer getLength() {
-		return length;
+
+	public long getTaskDegree() {
+		return taskDegree;
 	}
 
-	public void setLength(Integer length) {
-		this.length = length;
+	public void setTaskDegree(long taskDegree) {
+		this.taskDegree = taskDegree;
 	}
 
-	public Integer getType() {
-		return type;
+
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setType(Integer type) {
-		this.type = type;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 
-	public String getStartTime() {
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+	public java.sql.Timestamp getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(String startTime) {
+	public void setStartTime(java.sql.Timestamp startTime) {
 		this.startTime = startTime;
 	}
 
-	public String getEndTime() {
+
+	public java.sql.Timestamp getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(String endTime) {
+	public void setEndTime(java.sql.Timestamp endTime) {
 		this.endTime = endTime;
 	}
 
-	public String getKeyword() {
-		return keyword;
+
+	public long getSendUserId() {
+		return sendUserId;
 	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
+	public void setSendUserId(long sendUserId) {
+		this.sendUserId = sendUserId;
 	}
 
-	public Integer getStatus() {
-		return status;
+
+	public String getSendUserName() {
+		return sendUserName;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setSendUserName(String sendUserName) {
+		this.sendUserName = sendUserName;
 	}
 
-	public Long getGoodsId() {
-		return goodsId;
-	}
-
-	public void setGoodsId(Long goodsId) {
-		this.goodsId = goodsId;
-	}
-
-	public Long getOriginId() {
-		return originId;
-	}
-
-	public void setOriginId(Long originId) {
-		this.originId = originId;
-	}
-
-	public Long getAreaId() {
-		return areaId;
-	}
-
-	public void setAreaId(Long areaId) {
-		this.areaId = areaId;
-	}
-
-	public Long getGoodsTypeId() {
-		return goodsTypeId;
-	}
-
-	public void setGoodsTypeId(Long goodsTypeId) {
-		this.goodsTypeId = goodsTypeId;
-	}
-
-	public String getPath() {
-		return path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-	}
-
-	public String getQrcodePath() {
-		return qrcodePath;
-	}
-
-	public void setQrcodePath(String qrcodePath) {
-		this.qrcodePath = qrcodePath;
-	}
-
-	public String getQrcodeUrl() {
-		return qrcodeUrl;
-	}
-
-	public void setQrcodeUrl(String qrcodeUrl) {
-		this.qrcodeUrl = qrcodeUrl;
-	}
-
-	public Integer getGoodsStatus() {
-		return goodsStatus;
-	}
-
-	public void setGoodsStatus(Integer goodsStatus) {
-		this.goodsStatus = goodsStatus;
-	}
-
-	@Override
-	public String toString() {
-		return "QueryCondition [id=" + id + ", draw=" + draw + ", start="
-				+ start + ", length=" + length + ", type=" + type
-				+ ", startTime=" + startTime + ", endTime=" + endTime
-				+ ", keyword=" + keyword + ", status=" + status + ", goodsId="
-				+ goodsId + ", originId=" + originId + ", areaId=" + areaId
-				+ ", goodsTypeId=" + goodsTypeId + ", goodsStatus="
-				+ goodsStatus + ", path=" + path + ", qrcodePath=" + qrcodePath
-				+ ", qrcodeUrl=" + qrcodeUrl + "]";
-	}
 
 } 
