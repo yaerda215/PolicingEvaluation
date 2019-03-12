@@ -20,38 +20,6 @@
 		<!-- bootstrap wysihtml5 - text editor -->
 		<link rel="stylesheet" href="<%=path%>/res/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-		<style type="text/css">
-			.modal-dialog {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-			}
-
-			.modal-content {
-				/*overflow-y: scroll; */
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				width: 100%;
-			}
-
-			.modal-body {
-				overflow-y: scroll;
-				position: absolute;
-				top: 55px;
-				bottom: 65px;
-				width: 100%;
-			}
-
-			.modal-footer {
-				position: absolute;
-				width: 100%;
-				bottom: 0;
-			}
-		</style>
-
 	</head>
 	
 	<body class="hold-transition skin-blue sidebar-mini">
