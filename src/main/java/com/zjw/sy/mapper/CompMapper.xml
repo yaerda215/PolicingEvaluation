@@ -10,11 +10,11 @@
         FROM
         task_manage
         <where>
-            <if test="taskDegree != null and taskDegree != ''">
-                taskDegree = #{taskDegree}
+            <if test="type != null and type != ''">
+                taskDegree = #{type}
             </if>
-            <if test="taskTitle != null and taskTitle != ''">
-                taskTitle = #{taskTitle}
+            <if test="keyword != null and keyword != ''">
+                taskTitle = #{keyword}
             </if>
         </where>
         order by endTime desc

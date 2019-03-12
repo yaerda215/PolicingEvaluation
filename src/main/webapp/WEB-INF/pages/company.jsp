@@ -95,7 +95,7 @@
 						<div class="row">
 							<form id="queryForm" action="<%=path%>/com/list" method="post">
 								<div class="col-xs-1">
-									<select id="area" name="taskDegree" class="form-control input-sm">
+									<select id="area" name="type" class="form-control input-sm">
 										<option value=""><sp:message code="sys.all"/></option>
 										<option value="1">紧急</option>
 										<option value="2">重要</option>
@@ -105,7 +105,7 @@
 									</select>
 								</div>
 								<div class="col-xs-2">
-									<input type="text" id="keyword" name="taskTitle" class="form-control input-sm" value=""
+									<input type="text" id="keyword" name="keyword" class="form-control input-sm" value=""
 										placeholder="<sp:message code="sys.keyword"/>">
 								</div>
 								<button type="button" class="btn btn-primary btn-sm" id="btn-query">

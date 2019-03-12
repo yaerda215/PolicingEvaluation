@@ -19,7 +19,6 @@ public class QueryCondition {
     private Integer length;  
     
     private Integer type;
-    
 
     
     private String  keyword;
@@ -128,5 +127,59 @@ public class QueryCondition {
 		this.sendUserName = sendUserName;
 	}
 
+	public Long getId() {
+		return id;
+	}
 
-} 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getDraw() {
+		return draw;
+	}
+
+	public void setDraw(Integer draw) {
+		this.draw = draw;
+	}
+
+	public Integer getStart() {
+		return start;
+	}
+
+	public void setStart(Integer start) {
+		this.start = start;
+	}
+
+	public Integer getLength() {
+		return length;
+	}
+
+	public void setLength(Integer length) {
+		this.length = length;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+}

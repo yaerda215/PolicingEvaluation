@@ -24,10 +24,7 @@ import com.zjw.sy.service.ICompanyService;
 import com.zjw.sy.web.view.DatatablesView;
 
 /**
- * @描述：企业Controller
  * @author ：zjw
- * @版本：V1.0
- * @创建时间：：2016-11-21 下午11:07:29
  */
 @Controller
 public class CompanyController {
@@ -47,7 +44,7 @@ public class CompanyController {
 	@ResponseBody
 	public String getData(HttpServletRequest request, QueryCondition query) {
 		DatatablesView<TaskManage> dataTable = companyService.getCompanyByCondition(query);
-		//dataTable.setDraw(query.getDraw());
+		dataTable.setDraw(query.getDraw());
 		String data = JSON.toJSONString(dataTable);
 		return data;
 	}
