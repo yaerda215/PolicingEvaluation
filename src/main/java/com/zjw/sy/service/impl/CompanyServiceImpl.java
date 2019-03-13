@@ -24,6 +24,10 @@ public class CompanyServiceImpl implements ICompanyService {
     @Override
     public DatatablesView<TaskManage> getCompanyByCondition(QueryCondition query) {
         List<TaskManage> list = compMapper.taskList(query);
-        return null;
+        DatatablesView<TaskManage> datatablesView = new DatatablesView<>();
+        datatablesView.setData(list);
+        datatablesView.setRecordsTotal(list.size());
+        datatablesView.setDraw(query.getDraw());
+        return datatablesView;
     }
 }

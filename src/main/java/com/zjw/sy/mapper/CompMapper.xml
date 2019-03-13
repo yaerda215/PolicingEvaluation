@@ -10,14 +10,16 @@
         FROM
         task_manage
         <where>
+            1=1
             <if test="type != null and type != ''">
-                taskDegree = #{type}
+                and taskDegree = #{type}
             </if>
             <if test="keyword != null and keyword != ''">
-                taskTitle = #{keyword}
+                and taskTitle like '%'||#{keyword}||'%'
             </if>
         </where>
-        order by endTime desc
+        order by endTime
+        limit #{length} offset #{start}
     </select>
 
 </mapper>

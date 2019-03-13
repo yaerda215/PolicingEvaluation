@@ -151,7 +151,7 @@
 	                            param[e.name] = e.value;
 	                        });
                         	return param;//自定义需要传递的参数。
-			       		},
+			       		}
 			    	},
 	                columns: [//对应上面thead里面的序列
 	                    //{"data": null,"width":"10px"},
@@ -172,7 +172,7 @@
 	                    {"data": 'userName', defaultContent: ""},
   	                    {"data": 'startTime', defaultContent: ""},
   	                    {"data": 'endTime', defaultContent: ""},
-	               		{"data": 'sendUserName'},
+	               		{"data": 'sendUserName'}
 	                ],
 
 
@@ -193,10 +193,10 @@
 	                  	//lengthMenu: '<select class="form-control input-xsmall">' + '<option value="5">5</option>' + '<option value="10">10</option>' + '<option value="20">20</option>' + '<option value="30">30</option>' + '<option value="40">40</option>' + '<option value="50">50</option>' + '</select>条记录',//左上角的分页大小显示。
 	                  	processing: "<sp:message code='sys.load'/>",//处理页面数据的时候的显示
 	                    paginate: {//分页的样式文本内容。
-	                   		previous: "<",
-	                     	next: ">",
-	                     	first: "<<",
-	                     	last: ">>"
+	                   		previous: "上一页",
+	                     	next: "下一页",
+	                     	first: "首页",
+	                     	last: "尾页"
 	                    },
 	                    zeroRecords: "<sp:message code='sys.nodata'/>",//table tbody内容为空时，tbody的内容。
 	                    //下面三者构成了总体的左下角的内容。
@@ -204,7 +204,7 @@
 	                    info: "<sp:message code='sys.pages2'/>",
 	                    infoEmpty: "<sp:message code='sys.nodata'/>",//筛选为空时左下角的显示。0条记录
 	                    infoFiltered: "",//筛选之后的左下角筛选提示(另一个是分页信息显示，在上面的info中已经设置，所以可以不显示)，
-	                   	sSearch: "<sp:message code='sys.keyword'/>：",
+	                   	sSearch: "<sp:message code='sys.keyword'/>："
 	                }
 	            });
 

@@ -44,7 +44,6 @@ public class CompanyController {
 	@ResponseBody
 	public String getData(HttpServletRequest request, QueryCondition query) {
 		DatatablesView<TaskManage> dataTable = companyService.getCompanyByCondition(query);
-		dataTable.setDraw(query.getDraw());
 		String data = JSON.toJSONString(dataTable);
 		return data;
 	}
