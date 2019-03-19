@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @date 2019-03-19 09:28:19
  */
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     protected Logger log = LoggerFactory.getLogger(this.getClass());
@@ -37,7 +38,7 @@ public class UserController {
      * @author ZhengJiawei
      * @date 2019-03-19 09:26:19
      */
-    @RequestMapping("/account/sign")
+    @RequestMapping("/login")
     public String sign(HttpServletRequest request, User user, Model model) {
         user = userService.login(user);
         if (user != null) {
@@ -58,7 +59,7 @@ public class UserController {
      * @author ZhengJiawei
      * @date 2019-03-19 09:27:17
      */
-    @RequestMapping("/account/out")
+    @RequestMapping("/out")
     public String out(HttpServletRequest request) {
         request.getSession().setAttribute("user", null);
         return "login";
@@ -71,7 +72,7 @@ public class UserController {
      * @author ZhengJiawei
      * @date 2019-03-19 09:27:51
      */
-    @RequestMapping("/account/reg")
+    @RequestMapping("/reg")
     public String register() {
         return "register";
     }
