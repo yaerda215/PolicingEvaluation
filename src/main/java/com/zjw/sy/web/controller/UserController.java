@@ -42,7 +42,7 @@ public class UserController {
         user = userService.login(user);
         if (user != null) {
             request.getSession().setAttribute("user", user);
-            model.addAttribute("user",user);
+            model.addAttribute("user", user);
             return "index";
         } else {
             model.addAttribute("msg", "登陆失败，请重新登陆!");

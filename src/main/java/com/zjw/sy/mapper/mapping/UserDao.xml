@@ -10,7 +10,8 @@
         FROM
         user
         WHERE
-        userName = #{userName}
+        userId = #{userId}
+        and userName = #{userName}
         and pwd = #{pwd}
     </select>
 
