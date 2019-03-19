@@ -11,7 +11,7 @@
  Target Server Version : 80015
  File Encoding         : 65001
 
- Date: 19/03/2019 15:21:50
+ Date: 19/03/2019 15:57:46
 */
 
 SET NAMES utf8mb4;
@@ -95,13 +95,14 @@ CREATE TABLE `user`  (
   `pwd` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `permissionDegree` int(4) NULL DEFAULT NULL COMMENT '权限级别',
   `qdbm` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '区队编码',
+  `kpfs` double(4, 0) NULL DEFAULT NULL COMMENT '考评分数',
   PRIMARY KEY (`userId`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'zjwzjw', '123456', 3, 'zjjc1591801');
+INSERT INTO `user` VALUES (1, 'zjwzjw', '123456', 3, 'zjjc1591801', NULL);
 
 -- ----------------------------
 -- Table structure for user_wj

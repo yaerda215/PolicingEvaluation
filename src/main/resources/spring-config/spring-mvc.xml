@@ -28,13 +28,12 @@
     <!-- jsp jstl -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">      
  		<property name="prefix" value="/WEB-INF/pages/" />      
- 		<property name="suffix" value=".jsp" />      
+ 		<property name="suffix" value=".jsp" />
 	</bean>        
 	
     <!-- 静态资源过滤 -->
     <mvc:resources location="/res/" mapping="/res/**"/> 
-    <mvc:resources location="/WEB-INF/pages/error/" mapping="/WEB-INF/pages/error/**"/> 
-    <mvc:resources location="/upload/" mapping="/upload/**"/> 
+    <mvc:resources location="/WEB-INF/pages/error/" mapping="/WEB-INF/pages/error/**"/>
     
     <!-- annotation默认的方法映射适配器 -->    
     <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
