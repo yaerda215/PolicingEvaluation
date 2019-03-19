@@ -24,7 +24,7 @@ public class FileUploadProgressListener implements ProgressListener {
         session.setAttribute("progress", progress);
     }
 
-    public void setSession(HttpSession session) {
+    void setSession(HttpSession session) {
         this.session = session;
     }
 
