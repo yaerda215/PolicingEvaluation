@@ -1,4 +1,4 @@
-package com.zjw.sy.web;
+package com.zjw.sy.web.controller;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
