@@ -98,101 +98,17 @@
 						<div class="tab-pane active" id="tab_1">
 							<form class="form-horizontal"  id="jksFrom" action="<%=path%>/com/add" method="post">
 								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="user.username"/></label>
+									<label for="inputName" class="col-sm-3 control-label">*姓名</label>
 									<div class="col-sm-9">
 										<input type="text" class="form-control" name="username" placeholder="<sp:message code="user.reg.bt"/>">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="user.password"/></label>
+									<label for="inputName" class="col-sm-3 control-label">*密码</label>
 									<div class="col-sm-9">
-										<input type="password" class="form-control" name="password" placeholder="<sp:message code="user.reg.bt"/>">
+										<input type="text" class="form-control" name="username" placeholder="<sp:message code="user.reg.bt"/>">
 									</div>
 								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="com.type"/></label>
-									<div class="col-sm-9">
-										<input type="radio" class="form-control" name="companyType" checked="checked" value="4"><sp:message code="com.jks"/>
-										<input type="radio" class="form-control" name="companyType" value="5"><sp:message code="com.dls"/>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="com.name"/></label>
-									<div class="col-sm-9">
-										<input type="text" class="form-control" name="companyName" placeholder="<sp:message code="user.reg.bt"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="com.con.name"/></label>
-									<div class="col-sm-9">
-										<input type="text" class="form-control" name="companyContactsName" placeholder="<sp:message code="user.reg.bt"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label"><sp:message code="com.con.tel"/></label>
-									<div class="col-sm-9">
-										<input type="tel" class="form-control" name="companyContactsTel" placeholder="<sp:message code="user.reg.kx"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputEmail" class="col-sm-3 control-label">*<sp:message code="com.con.email"/></label>
-									<div class="col-sm-9">
-										<input type="email" class="form-control" name="companyContactsEmail" placeholder="<sp:message code="user.reg.bt"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="com.con.mob"/></label>
-
-									<div class="col-sm-9">
-										<input type="tel" class="form-control" name="companyContactsMobile" placeholder="<sp:message code="user.reg.bt"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="com.reg.address"/></label>
-
-									<div class="col-sm-9">
-										<input type="text" class="form-control" name="companyRegisterAddress" placeholder="<sp:message code="user.reg.bt"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="com.work.address"/></label>
-
-									<div class="col-sm-9">
-										<input type="text" class="form-control" name="companyWorkAddress" placeholder="<sp:message code="user.reg.bt"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="com.legal"/></label>
-
-									<div class="col-sm-9">
-										<input type="text" class="form-control" name="companyLegal" placeholder="<sp:message code="user.reg.bt"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label">*<sp:message code="com.legal.mob"/></label>
-
-									<div class="col-sm-9">
-										<input type="tel" class="form-control" name="companyLegalTel" placeholder="<sp:message code="user.reg.bt"/>">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label"><sp:message code="com.license"/></label>
-					                <!-- <label>选择营业执照照片</label> -->
-					                <div class="col-sm-9">
-					                	<img id="licenseImg" src=""/>
-					                	<input type="hidden" id="progressView" class="btn btn-success" value="" />
-					                    <input type="file" id="uploadFile">
-					                    <input type="hidden" class="form-control" id="companyLicenseImg" name="companyLicenseImg" placeholder="<sp:message code="com.license"/>">
-				                    </div>
-								</div>
-								<!--  
-								<div class="form-group">
-									<label for="inputName" class="col-sm-3 control-label"></label>
-									<div class="col-sm-9">
-										<label> <input type="checkbox"> 我同意并遵守<a href="#"> 协议</a> </label>
-									</div>
-								</div>
-								-->
 								<div class="form-group">
 									<label for="inputName" class="col-sm-3 control-label"></label>
 									<div class="col-sm-9">

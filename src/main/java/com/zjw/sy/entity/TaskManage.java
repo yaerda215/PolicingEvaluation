@@ -1,6 +1,11 @@
 package com.zjw.sy.entity;
 
-
+/**
+ * Description 任务实体类
+ *
+ * @author ZhengJiawei
+ * @date 2019-03-19 10:13:17
+ */
 public class TaskManage {
 
     private long taskId;

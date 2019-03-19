@@ -1,12 +1,10 @@
 package com.zjw.sy.common;
 
 /**
- * 
- * @描述：常量信息池
- * @author ：zjw
- * @版本：V1.0
- * @创建时间：：2016-11-21 下午10:55:10
+ * Description 常量信息池
  *
+ * @author ZhengJiawei
+ * @date 2019-03-19 09:59:25
  */
 public class Constants {
 

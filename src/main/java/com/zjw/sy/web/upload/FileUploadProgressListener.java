@@ -6,25 +6,25 @@ import org.apache.commons.fileupload.ProgressListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @描述：文件上传进度监听
- * @author ：zjw
- * @版本：V1.0
- * @创建时间：：2016-11-21 下午11:06:04
+ * Description 文件上传进度监听
+ *
+ * @author ZhengJiawei
+ * @date 2019-03-19 09:35:24
  */
 @Component
 public class FileUploadProgressListener implements ProgressListener {
-	
+
     private HttpSession session;
-    
+
     @Override
     public void update(long bytesRead, long contentLength, int items) {
-    	//设置上传进度
-        ProgressBean progress = new ProgressBean(bytesRead, contentLength, items); 
+        //设置上传进度
+        ProgressBean progress = new ProgressBean(bytesRead, contentLength, items);
         //将上传进度保存到session中
-        session.setAttribute("progress", progress); 
+        session.setAttribute("progress", progress);
     }
-    
-    public void setSession(HttpSession session){
+
+    public void setSession(HttpSession session) {
         this.session = session;
     }
 

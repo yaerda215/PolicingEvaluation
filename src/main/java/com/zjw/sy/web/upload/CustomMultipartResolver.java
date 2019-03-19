@@ -15,16 +15,13 @@ import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 /**
- * @描述：自定义MultipartResolver
- * @author ：zjw
- * @版本：V1.0
- * @创建时间：：2016-11-21 下午11:05:55
+ * Description
+ *
+ * @author ZhengJiawei
+ * @date 2019-03-19 09:35:00
  */
 public class CustomMultipartResolver extends CommonsMultipartResolver {
 
-    /**
-     * FileUploadProgressListener 自动注入
-     */
 	@Resource
     private FileUploadProgressListener progressListener;
 

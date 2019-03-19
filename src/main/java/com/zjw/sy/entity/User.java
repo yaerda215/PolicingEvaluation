@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 
 /**
- * 用户
+ * 用户实体类
  *
  * @author ZhengJiawei
  * @create 2019-02-13 11:13

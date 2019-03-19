@@ -1,10 +1,10 @@
 package com.zjw.sy.web.view;
 
 /**
- * @描述：消息提醒View
- * @author ：zjw
- * @版本：V1.0
- * @创建时间：：2016-11-21 下午11:06:38
+ * Description MessageView
+ *
+ * @author ZhengJiawei
+ * @date 2019-03-19 09:31:19
  */
 public class MessageView {  
 	

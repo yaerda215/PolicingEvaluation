@@ -5,8 +5,6 @@
 <configuration>  
 
 	<typeAliases>
-		<typeAlias type="com.zjw.sy.entity.Area" alias="Area"/>
-		<typeAlias type="com.zjw.sy.entity.Company" alias="Company"/>
 		<typeAlias type="com.zjw.sy.entity.bean.QueryCondition" alias="QueryCondition"/>
     </typeAliases>
     

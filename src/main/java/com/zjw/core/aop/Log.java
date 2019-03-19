@@ -14,84 +14,84 @@ import com.alibaba.fastjson.JSON;
 
 /**
  * 内部自动化事物控制器
- * @author 
- * @time 
- * @email 
+ *
+ * @author zjw
  */
 @Component
 @Aspect
 public class Log {
 
-	protected Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	@Pointcut("@annotation(com.zjw.core.annotation.po.Log)")
-	public void logMethod(){}
-	
-	@Before("logMethod()")
-	public void openTra(JoinPoint joinPoint) throws ClassNotFoundException{
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-		String targetName = joinPoint.getTarget().getClass().getName();
+    @Pointcut("@annotation(com.zjw.core.annotation.po.Log)")
+    public void logMethod() {
+    }
 
-		String name = joinPoint.getSignature().getName();
+    @Before("logMethod()")
+    public void openTra(JoinPoint joinPoint) throws ClassNotFoundException {
 
-		Object[] arguments = joinPoint.getArgs();
-		Class<?> targetClass = Class.forName(targetName);
+        String targetName = joinPoint.getTarget().getClass().getName();
 
-		Method[] methods = targetClass.getMethods();
+        String name = joinPoint.getSignature().getName();
 
-		String methodName = null;
+        Object[] arguments = joinPoint.getArgs();
+        Class<?> targetClass = Class.forName(targetName);
 
-		for (Method method : methods) {
-			if (method.getName().equals(name)) {
-				@SuppressWarnings("rawtypes")
-				Class[] clazzs = method.getParameterTypes();
-				if (clazzs.length == arguments.length) {
+        Method[] methods = targetClass.getMethods();
 
-					methodName = method.getAnnotation(com.zjw.core.annotation.Log.class).action();
+        String methodName = null;
 
-					if (methodName.equals("null")) {
-						methodName = name;
-					}
+        for (Method method : methods) {
+            if (method.getName().equals(name)) {
+                @SuppressWarnings("rawtypes")
+                Class[] clazzs = method.getParameterTypes();
+                if (clazzs.length == arguments.length) {
 
-					break;
-				}
-			}
-		}
+                    methodName = method.getAnnotation(com.zjw.core.annotation.Log.class).action();
 
-		logger.info("/-----------" + methodName + "进栈/"+ "\r\n\r\n args:" + JSON.toJSONString(arguments) + "\r\n");
-		
-	}
-	
-	@AfterReturning("logMethod()")
-	public void cmmintTra(JoinPoint joinPoint) throws ClassNotFoundException{
-		
-		String targetName = joinPoint.getTarget().getClass().getName();
+                    if (methodName.equals("null")) {
+                        methodName = name;
+                    }
 
-		String name = joinPoint.getSignature().getName();
+                    break;
+                }
+            }
+        }
 
-		Object[] arguments = joinPoint.getArgs();
-		Class<?> targetClass = Class.forName(targetName);
+        logger.info("/-----------" + methodName + "进栈/" + "\r\n\r\n args:" + JSON.toJSONString(arguments) + "\r\n");
 
-		Method[] methods = targetClass.getMethods();
+    }
 
-		String methodName = null;
+    @AfterReturning("logMethod()")
+    public void cmmintTra(JoinPoint joinPoint) throws ClassNotFoundException {
 
-		for (Method method : methods) {
-			if (method.getName().equals(name)) {
-				@SuppressWarnings("rawtypes")
-				Class[] clazzs = method.getParameterTypes();
-				if (clazzs.length == arguments.length) {
+        String targetName = joinPoint.getTarget().getClass().getName();
 
-					methodName = method.getAnnotation(com.zjw.core.annotation.Log.class).action();
+        String name = joinPoint.getSignature().getName();
 
-					if (methodName.equals("null")) {
-						methodName = name;
-					}
+        Object[] arguments = joinPoint.getArgs();
+        Class<?> targetClass = Class.forName(targetName);
 
-					break;
-				}
-			}
-		}
-		logger.info("/-----------" + methodName + "出栈/"+ "\r\n\r\n args:" + JSON.toJSONString(arguments) + "\r\n");
-	}
+        Method[] methods = targetClass.getMethods();
+
+        String methodName = null;
+
+        for (Method method : methods) {
+            if (method.getName().equals(name)) {
+                @SuppressWarnings("rawtypes")
+                Class[] clazzs = method.getParameterTypes();
+                if (clazzs.length == arguments.length) {
+
+                    methodName = method.getAnnotation(com.zjw.core.annotation.Log.class).action();
+
+                    if (methodName.equals("null")) {
+                        methodName = name;
+                    }
+
+                    break;
+                }
+            }
+        }
+        logger.info("/-----------" + methodName + "出栈/" + "\r\n\r\n args:" + JSON.toJSONString(arguments) + "\r\n");
+    }
 }

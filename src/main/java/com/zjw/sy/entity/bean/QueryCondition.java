@@ -1,12 +1,10 @@
 package com.zjw.sy.entity.bean;
 
 /**
- * 
- * @描述：查询条件Bean
- * @作者：cyh
- * @版本：V1.0
- * @创建时间：：2016-11-21 下午10:59:24
+ * Description 查询条件Bean
  *
+ * @author ZhengJiawei
+ * @date 2019-03-19 10:13:05
  */
 public class QueryCondition {  
   

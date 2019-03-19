@@ -3,12 +3,12 @@ package com.zjw.sy.web.view;
 import java.util.List;
 
 /**
- * @描述：DataTables数据封装View
- * @author ：zjw
- * @版本：V1.0
- * @创建时间：：2016-11-21 下午11:06:31
+ * Description DataTable
+ *
+ * @author ZhengJiawei
+ * @date 2019-03-19 09:30:55
  */
-public class DatatablesView<T> {  
+public class DataTablesView<T> {
   
     private List<T> data; //data 与datatales 加载的“dataSrc"对应  
     
@@ -18,7 +18,7 @@ public class DatatablesView<T> {
     
     private int draw;
     
-    public DatatablesView() {  
+    public DataTablesView() {
           
     }
 

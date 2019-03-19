@@ -11,9 +11,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 内部自动化事物控制器
- * @author 
- * @time 
- * @email 7
+ * @author zjw
  */
 @Aspect
 public class TransactionManager {
