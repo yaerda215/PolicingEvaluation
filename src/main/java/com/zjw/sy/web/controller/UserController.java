@@ -3,6 +3,7 @@ package com.zjw.sy.web.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.zjw.sy.common.Constants;
 import com.zjw.sy.entity.User;
 import com.zjw.sy.service.UserService;
 import org.slf4j.Logger;
@@ -32,19 +33,20 @@ public class UserController {
      * @param request request
      * @param user    用户
      * @param model   model
-     * @return ModelAndView
+     * @return String
      * @author ZhengJiawei
      * @date 2019-03-19 09:26:19
      */
     @RequestMapping("/account/sign")
-    public ModelAndView sign(HttpServletRequest request, User user, Model model) {
+    public String sign(HttpServletRequest request, User user, Model model) {
         user = userService.login(user);
         if (user != null) {
-            //request.getSession().setAttribute(Constants.CURRENT_USER, user);
-            return new ModelAndView("company");
+            request.getSession().setAttribute("user", user);
+            model.addAttribute("user",user);
+            return "index";
         } else {
             model.addAttribute("msg", "登陆失败，请重新登陆!");
-            return new ModelAndView("login");
+            return "login";
         }
     }
 
@@ -58,7 +60,7 @@ public class UserController {
      */
     @RequestMapping("/account/out")
     public String out(HttpServletRequest request) {
-        request.getSession().setAttribute("company", null);
+        request.getSession().setAttribute("user", null);
         return "login";
     }
 

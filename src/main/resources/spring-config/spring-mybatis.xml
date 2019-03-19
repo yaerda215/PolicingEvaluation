@@ -69,8 +69,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
 	   	<property name="dataSource" ref="dataSource"/>  
 	   	<property name="configLocation" value="classpath:mybatis-config/mybatis-config.xml"/> 
-	   	<!-- mapper和resultmap配置路径   -->
-	   	<property name="mapperLocations" value="classpath:mybatis-config/mapper/*-mapper.xml"/>
+
 	</bean>
 	
 	<!-- 通过扫描的模式，扫描在com.zjw.sy.dao.mapper目录下的所有mapper -->
