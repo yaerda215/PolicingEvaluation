@@ -21,6 +21,12 @@ public class User {
     @Column(name = "pwd")
     private String pwd;
 
+    @Column(name = "permissionDegree")
+    private String permissionDegree;
+
+    @Column(name = "qdbm")
+    private String qdbm;
+
     public Integer getUserId() {
         return userId;
     }
@@ -44,4 +50,21 @@ public class User {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+
+    public String getPermissionDegree() {
+        return permissionDegree;
+    }
+
+    public void setPermissionDegree(String permissionDegree) {
+        this.permissionDegree = permissionDegree;
+    }
+
+    public String getQdbm() {
+        return qdbm;
+    }
+
+    public void setQdbm(String qdbm) {
+        this.qdbm = qdbm;
+    }
+
 }
